@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Tính Tiền</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script> <!-- Thư viện để lưu file Excel -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Trang Web Tính Tiền</h1>
+        
+        <!-- Form Nhập Thông Tin Khách Hàng -->
+        <h2>Thông Tin Khách Hàng</h2>
+        <div class="input-group">
+            <label for="customerName">Tên khách hàng</label>
+            <input type="text" id="customerName" required>
+        </div>
+        <div class="input-group">
+            <label for="customerPhone">Số điện thoại</label>
+            <input type="tel" id="customerPhone" required>
+        </div>
+        <div class="input-group">
+            <label for="customerAddress">Địa chỉ</label>
+            <input type="text" id="customerAddress" required>
+        </div>
+        <div class="input-group">
+            <label for="date">Ngày tháng năm</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        
+        <button class="button" onclick="addCustomer()">Thêm Khách Hàng</button>
+
+        <!-- Danh Sách Sản Phẩm -->
+        <h2>Danh Sách Sản Phẩm</h2>
+        <div class="input-group">
+            <label for="productName">Tên sản phẩm</label>
+            <input type="text" id="productName">
+        </div>
+        <div class="input-group">
+            <label for="productPrice">Giá</label>
+            <input type="number" id="productPrice">
+        </div>
+        <div class="input-group">
+            <label for="productQuantity">Số lượng</label>
+            <input type="number" id="productQuantity">
+        </div>
+
+        <button class="button" onclick="addProduct()">Thêm Sản Phẩm</button>
+
+        <!-- Bảng Sản Phẩm -->
+        <table id="productTable">
+            <thead>
+                <tr>
+                    <th>Tên sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Tổng</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dữ liệu sản phẩm sẽ hiển thị tại đây -->
+            </tbody>
+        </table>
+
+        <button class="button" onclick="downloadProductExcel()">Lưu Excel Danh Sách Sản Phẩm</button>
+
+        <!-- Bảng Thông Tin Khách Hàng -->
+        <h2>Thông Tin Khách Hàng</h2>
+        <table id="customerTable">
+            <thead>
+                <tr>
+                    <th>Tên khách hàng</th>
+                    <th>Số điện thoại</th>
+                    <th>Địa chỉ</th>
+                    <th>Ngày</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dữ liệu khách hàng sẽ hiển thị tại đây -->
+            </tbody>
+        </table>
+
+        <button class="button" onclick="downloadCustomerExcel()">Lưu Excel Thông Tin Khách Hàng</button>
+    </div>
+
+</body>
+</html>
